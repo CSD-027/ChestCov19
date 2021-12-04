@@ -31,15 +31,15 @@
     </div>
   </form>
 
-	{% if 1==1 %}
-  <img src="{{url_for('static', filename="img/"+name)}}"  height="400px" width="400px" />
+    {% if name %}
+    <img src="{{url_for('static', filename='img/' + name)}}"  height="400px" width="400px" />
 	<h2> Prediction   : <i> {{prediction}} </i></h2>
-	<h2> Filename   : <i> {{name}} </i></h2>
 	<!--
+    <h2> Filename   : <i> {{name}} </i></h2>
     <h2> Image path   : <i> {{img_path}} </i></h2>
-  -->
-  <h2> Label Percentage   : <i> {{percentage}}% </i></h2>
-  <h2> Similarity Index   : <i> {{similarity}} </i></h2>
+    -->
+    <h2> Label Percentage   : <i> {{percentage}}% </i></h2>
+    <h2> Similarity Index   : <i> {{similarity}} </i></h2>
 	{% endif %}
 
 </div>
