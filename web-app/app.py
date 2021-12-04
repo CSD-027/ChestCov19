@@ -23,17 +23,21 @@ def predict_label(path):
     p = model.predict(i, batch_size=10)
     return p
 
+from uuid import uuid4
+def make_unique(string):
+    ident = uuid4().__str__()
+    return f"{ident}-{string}"
 # routes
 
 
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
-
+"""
 @app.route("/", methods=['GET', 'POST'])
 def kuch_bhi():
     return render_template("home.html")
 
-
+"""
 @app.route("/about")
 def about_page():
     return "About You..!!!"
@@ -45,16 +49,16 @@ def get_hours():
         img = request.files['my_image']
 
         # img_path = "/" + img.filename
-        filename = secure_filename(img.filename)
+        filename = make_unique(img.filename)
         img.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
         img_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
-        name = img.filename
         p = predict_label(img_path)
         p = np.asarray(p)
         index_max = np.argmax(p)
+        predict = dic[index_max]
 
-    return render_template("home.html", prediction=dic[index_max], img_path=img_path, name=name, percentage=round(np.amax(p)*100, 2), similarity=p*100)
-
+        return render_template("home.html", prediction=predict, img_path=img_path, name=filename, percentage=round(np.amax(p)*100, 2), similarity=p*100)
+    return render_template("home.html")
 
 if __name__ == '__main__':
     # app.debug = True
