@@ -32,12 +32,11 @@ def make_unique(string):
 
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
-"""
+
 @app.route("/", methods=['GET', 'POST'])
 def kuch_bhi():
     return render_template("home.html")
 
-"""
 @app.route("/about")
 def about_page():
     return "About You..!!!"

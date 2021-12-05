@@ -1,54 +1,90 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <title>ChestCov19</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/style.css') }}">
+  <script type=text/javascript src="{{
+    url_for('static', filename='script/app.js') }}"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
+
 <body>
 
-<div class="container">
-  <h1 class="jumbotron bg-primary">Website Pendeteksi Covid-19 berdasarkan Chest X-Ray (Web ChestCov-19)
-  </h1>
-  <br><br>
-  <form class="form-horizontal" action="/submit" method="post" enctype="multipart/form-data">
 
-    <div class="form-group">
-      <label class="control-label col-sm-2" for="pwd">Upload Your Image :</label>
-      <div class="col-sm-10">          
-        <input type="file" class="form-control" placeholder="Hours Studied"  name="my_image" id="pwd">
+  <header>
+    <img style="width: 3%; height: 3%" class="logo" src="{{url_for('static', filename='covid-19.svg')}}">
+    <nav>
+      <ul class="nav__links">
+        <li><a href="#">Info Covid</a></li>
+        <li><a href="#">Tentang Covid</a></li>
+        <li><a href="#">Berita Covid</a></li>
+      </ul>
+    </nav>
+    <a class="cta" href="#"><button>Contact</button></a>
+  </header>
+
+  <main>
+
+    <!--using https://ruyadorno.github.io/simple-slider/ -->
+    <div style="top: -500px; margin-top: 40px;">
+      <div style="position: absolute; width:100%; height:450px" data-simple-slider>
+        <img style="width: 100%;" src="https://i.ibb.co/gS049Qm/wp3105352-foods-wallpapers.jpg" />
+        <img style="width: 100%;" src="https://i.ibb.co/ZGKLLm1/wp3105350-foods-wallpapers.jpg" />
+        <img style="width: 100%;" src="https://i.ibb.co/m8JVjPZ/wp3105349-foods-wallpapers.jpg" />
+        <img style="width: 100%;" src="https://i.ibb.co/R75PLWr/wp3105347-foods-wallpapers.jpg" />
+        <img style="width: 100%;" src="https://i.ibb.co/0ZmbVtv/wp3105346-foods-wallpapers.jpg" />
       </div>
     </div>
+    <script src="https://rawgit.com/ruyadorno/simple-slider/master/dist/simpleslider.min.js"></script>
+    <script>
+      simpleslider.getSlider();
+    </script>
 
-    <div class="form-group">        
-      <div class="col-sm-offset-2 col-sm-10">
-        <button type="submit" class="btn btn-success">Submit</button>
-      </div>
-    </div>
-  </form>
+    <div class="container">
+      <h1 class="jumbotron bg-primary">Website Pendeteksi Covid-19 berdasarkan Chest X-Ray (Web ChestCov-19)
+      </h1>
+      <br><br>
+      <form class="form-horizontal" action="/submit" method="post" enctype="multipart/form-data">
 
-    {% if name %}
-    <img src="{{url_for('static', filename='img/' + name)}}"  height="400px" width="400px" />
-	<h2> Prediction   : <i> {{prediction}} </i></h2>
-	<!--
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="pwd">Upload Your Image :</label>
+          <div class="col-sm-10">
+            <input type="file" class="form-control" placeholder="Hours Studied" name="my_image" id="pwd">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-success">Submit</button>
+          </div>
+        </div>
+      </form>
+
+      {% if name %}
+      <img src="{{url_for('static', filename='img/' + name)}}" height="400px" width="400px" />
+      <h2> Prediction : <i> {{prediction}} </i></h2>
+      <!--
     <h2> Filename   : <i> {{name}} </i></h2>
     <h2> Image path   : <i> {{img_path}} </i></h2>
     -->
-    <h2> Label Percentage   : <i> {{percentage}}% </i></h2>
-    <h2> Similarity Index   : <i> {{similarity}} </i></h2>
-	{% endif %}
+      <h2> Label Percentage : <i> {{percentage}}% </i></h2>
+      <h2> Similarity Index : <i> {{similarity}} </i></h2>
+      {% endif %}
 
-</div>
-
-
+    </div>
 
 
-
-
+  </main>
 
 </body>
+
+<footer>
+  <span>Dicky & Karlina &copy 2021 </span>
+</footer>
+
 </html>
