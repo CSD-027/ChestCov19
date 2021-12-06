@@ -2,134 +2,153 @@
 <html lang="en">
 
 <head>
-  <title>ChestCov19</title>
-  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/2781/2781395.png">
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/style.css') }}">
-  <script type=text/javascript src="{{
+    <title>ChestCov19</title>
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/2781/2781395.png">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/style.css') }}">
+    <script type=text/javascript src="{{
     url_for('static', filename='script/app.js') }}"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 
 <body>
 
 
-  <header>
-    <img style="width: 3%; height: 3%" class="logo" src="{{url_for('static', filename='covid-19.svg')}}">
-    <nav>
-      <ul class="nav__links">
-        <li><a href="/">Home</a></li>
-        <li><a href="info">Info Covid</a></li>
-        <li><a href="about">About Us</a></li>
-      </ul>
-    </nav>
-    <a class="cta" href="contact"><button>Contact</button></a>
-  </header>
+    <header>
+        <img style="width: 3%; height: 3%" class="logo" src="{{url_for('static', filename='covid-19.svg')}}">
+        <nav>
+            <ul class="nav__links">
+                <li><a href="/">Home</a></li>
+                <li><a href="info">Info Covid</a></li>
+                <li><a href="about">About Us</a></li>
+            </ul>
+        </nav>
+        <a class="cta" href="contact"><button>Contact</button></a>
+    </header>
 
-  <!-- untuk di isi nanti -->
+    <!-- untuk di isi nanti -->
 
-  <section class="page-section" id="portfolio">
-    <div class="container p-4">
-        <div class="text-center portfolio1">
-            <h1 class="section-headtext-uppercase">Berita<br><br></h2>
-        </div>
-        <div class="row">
-            <div class="col-lg-4 col-sm-6 mb-4">
-                <div class="portfolio-item">
-                    <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content"><i class="fa fa-plus fa-3x"></i></div>
+    <section class="page-section" id="portfolio">
+        <div class="container p-4">
+            <div class="text-center portfolio1">
+                <h1 class="section-headtext-uppercase">Berita<br><br></h2>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-sm-6 mb-4">
+                    <div class="portfolio-item">
+                        <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content"><i class="fa fa-plus fa-3x"></i></div>
                             </div>
-                        <img class="img-fluid" src="https://lh3.googleusercontent.com/proxy/fSBi0TC1I24KGP9f_m6SCgtX8z6IQ1PDpEK3kxanQyjsUcB_ok1U7BlxsGNCQUqqQs1dJpvCqPn3QxC2XWMTMZiydnoYdPqG2uoV4ANRLyB0splJDw0qq_ADieSPBHcu" alt="" />
-                    </a>
-                    <div class="portfolio-caption">
-                    <div class="portfolio-caption-heading">judul</div>
-                    <div class="portfolio-caption-subheading text-muted">deskripsi</div>
-                </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 mb-4">
-                <div class="portfolio-item">
-                    <a class="portfolio-link" data-toggle="modal" href="#portfolioModal2">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content"><i class="fa fa-plus fa-3x"></i></div>
+                            <img class="img-fluid"
+                                src="https://lh3.googleusercontent.com/proxy/fSBi0TC1I24KGP9f_m6SCgtX8z6IQ1PDpEK3kxanQyjsUcB_ok1U7BlxsGNCQUqqQs1dJpvCqPn3QxC2XWMTMZiydnoYdPqG2uoV4ANRLyB0splJDw0qq_ADieSPBHcu"
+                                alt="" />
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">judul</div>
+                            <div class="portfolio-caption-subheading text-muted">deskripsi</div>
                         </div>
-                        <img class="img-fluid" src="https://akcdn.detik.net.id/visual/2020/06/28/swab-test-2_169.jpeg?w=650" alt="" />
-                    </a>
-                    <div class="portfolio-caption">
-                        <div class="portfolio-caption-heading">judul</div>
-                        <div class="portfolio-caption-subheading text-muted">deskripsi</div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 mb-4">
-                <div class="portfolio-item">
-                    <a class="portfolio-link" data-toggle="modal" href="#portfolioModal3">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content"><i class="fa fa-plus fa-3x"></i></div>
+                <div class="col-lg-4 col-sm-6 mb-4">
+                    <div class="portfolio-item">
+                        <a class="portfolio-link" data-toggle="modal" href="#portfolioModal2">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content"><i class="fa fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid"
+                                src="https://akcdn.detik.net.id/visual/2020/06/28/swab-test-2_169.jpeg?w=650" alt="" />
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">judul</div>
+                            <div class="portfolio-caption-subheading text-muted">deskripsi</div>
                         </div>
-                        <img class="img-fluid" src="https://akcdn.detik.net.id/visual/2020/11/03/ilustrasi-senyum-pakai-masker_169.jpeg?w=650" alt="" />
-                    </a>
-                    <div class="portfolio-caption">
-                        <div class="portfolio-caption-heading">judul</div>
-                        <div class="portfolio-caption-subheading text-muted">dekripsi</div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
-                <div class="portfolio-item">
-                    <a class="portfolio-link" data-toggle="modal" href="#portfolioModal4">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content"><i class="fa fa-plus fa-3x"></i></div>
+                <div class="col-lg-4 col-sm-6 mb-4">
+                    <div class="portfolio-item">
+                        <a class="portfolio-link" data-toggle="modal" href="#portfolioModal3">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content"><i class="fa fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid"
+                                src="https://akcdn.detik.net.id/visual/2020/11/03/ilustrasi-senyum-pakai-masker_169.jpeg?w=650"
+                                alt="" />
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">judul</div>
+                            <div class="portfolio-caption-subheading text-muted">dekripsi</div>
                         </div>
-                        <img class="img-fluid" src="https://akcdn.detik.net.id/visual/2021/07/14/giat-vaksinasi-serentak-pelajar-di-sejumlah-daerah-4_169.jpeg?w=650" alt="" />
-                    </a>
-                    <div class="portfolio-caption">
-                        <div class="portfolio-caption-heading">judul</div>
-                        <div class="portfolio-caption-subheading text-muted">deskripsi</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
-                <div class="portfolio-item">
-                    <a class="portfolio-link" data-toggle="modal" href="#portfolioModal5">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content"><i class="fa fa-plus fa-3x"></i></div>
-                        </div>
-                        <img class="img-fluid" src="https://www.its.ac.id/news/wp-content/uploads/sites/2/2021/09/Rektor-ITS-Prof-Dr-Ir-Mochamad-Ashari-MEng-saat-meninjau-kelas-perkuliahan-hybrid-di-Departemen-Teknik-Kelautan-ITS.jpeg" alt="" />
-                    </a>
-                    <div class="portfolio-caption">
-                        <div class="portfolio-caption-heading">judul</div>
-                        <div class="portfolio-caption-subheading text-muted">deskripsi</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6">
-                <div class="portfolio-item">
-                    <a class="portfolio-link" data-toggle="modal" href="#portfolioModal6">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content"><i class="fa fa-plus fa-3x"></i></div>
-                        </div>
-                        <img class="img-fluid" src="https://img.beritasatu.com/cache/beritasatu/620x350-2/1600343598.jpg" alt="" />
-                    </a>
-                    <div class="portfolio-caption">
-                        <div class="portfolio-caption-heading">judul</div>
-                        <div class="portfolio-caption-subheading text-muted">Deskripsi</div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-  </main>
+        <div class="container p-4" style="margin-top: 10px;">
+            <div class="text-center portfolio1">
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-sm-6 mb-4">
+                    <div class="portfolio-item">
+                        <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content"><i class="fa fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid"
+                                src="https://akcdn.detik.net.id/visual/2021/07/14/giat-vaksinasi-serentak-pelajar-di-sejumlah-daerah-4_169.jpeg?w=650"
+                                alt="" />
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">judul</div>
+                            <div class="portfolio-caption-subheading text-muted">deskripsi</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 mb-4">
+                    <div class="portfolio-item">
+                        <a class="portfolio-link" data-toggle="modal" href="#portfolioModal2">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content"><i class="fa fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid"
+                                src="https://www.its.ac.id/news/wp-content/uploads/sites/2/2021/09/Rektor-ITS-Prof-Dr-Ir-Mochamad-Ashari-MEng-saat-meninjau-kelas-perkuliahan-hybrid-di-Departemen-Teknik-Kelautan-ITS.jpeg" alt="" />
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">judul</div>
+                            <div class="portfolio-caption-subheading text-muted">deskripsi</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 mb-4">
+                    <div class="portfolio-item">
+                        <a class="portfolio-link" data-toggle="modal" href="#portfolioModal3">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content"><i class="fa fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid"
+                                src="https://img.beritasatu.com/cache/beritasatu/620x350-2/1600343598.jpg"
+                                alt="" />
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">judul</div>
+                            <div class="portfolio-caption-subheading text-muted">dekripsi</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        </main>
 
 </body>
 
 <footer>
-  <span><center>CSD-027 &copy 2021 </center></span>
+    <span>
+        <center>CSD-027 &copy 2021 </center>
+    </span>
 </footer>
 
 </html>

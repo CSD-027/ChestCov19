@@ -10,7 +10,8 @@ main {
   box-sizing: border-box;
 }
 
-li, a {
+li,
+a {
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
   font-size: 17px;
@@ -95,10 +96,9 @@ footer {
 
 /*kumpulan portofolio berita*/
 
-section#portfolio{
+section#portfolio {
   /*margin-top: 100px;*/
   padding: 0;
-  background-color: #f0efef;
 }
 
 .portfolio1 h1 {
@@ -114,34 +114,39 @@ section#portfolio{
   margin-left: auto;
   margin-right: auto;
 }
+
 #portfolio .portfolio-item .portfolio-link {
   position: relative;
   display: block;
   margin: 0 auto;
 }
+
 #portfolio .portfolio-item .portfolio-link .portfolio-hover {
   display: flex;
   position: absolute;
   width: 100%;
   height: 100%;
-  background: rgba(0, 136, 169, 1);
   align-items: center;
   justify-content: center;
   opacity: 0;
   transition: opacity ease-in-out 0.25s;
 }
+
 #portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content {
   font-size: 18.4px;
-  color: white;
+  color: #eeeeee;
 }
+
 #portfolio .portfolio-item .portfolio-link:hover .portfolio-hover {
   opacity: 1;
 }
+
 #portfolio .portfolio-item .portfolio-caption {
   padding: 24px;
   text-align: center;
-  background-color: #fff;
+  background-color: #eeeeee;
 }
+
 #portfolio .portfolio-item .portfolio-caption .portfolio-caption-heading {
   font-size: 24px;
   color: rgba(0, 136, 169, 1);
@@ -150,37 +155,55 @@ section#portfolio{
   font-weight: 700;
   margin-bottom: 0;
 }
+
 #portfolio .portfolio-item .portfolio-caption .portfolio-caption-subheading {
   font-family: "Poppins";
   text-transform: capitalize;
+}
+
+#portfolio .portfolio-item {
+  cursor: pointer;
+  transition: all 0.5s ease 0s;
+}
+
+#portfolio .portfolio-item:hover {
+  filter: brightness(80%);
+  transform: scale(1.1);
 }
 
 .portfolio-modal .modal-dialog {
   margin: 16px;
   max-width: 100vw;
 }
+
 .portfolio-modal .modal-content {
   padding-top: 96px;
   padding-bottom: 96px;
   text-align: center;
 }
+
 .portfolio-modal .modal-content h2 {
   font-size: 48px;
   line-height: 48px;
 }
+
 .portfolio-modal .modal-content p.item-intro {
   margin-bottom: 32px;
   font-family: "Poppins";
 }
+
 .portfolio-modal .modal-content p {
   margin-bottom: 32px;
 }
+
 .portfolio-modal .modal-content ul.list-inline {
   margin-bottom: 32px;
 }
+
 .portfolio-modal .modal-content img {
-  margin-bottom: 32px ;
+  margin-bottom: 32px;
 }
+
 .portfolio-modal .close-modal {
   position: absolute;
   top: 24px;
@@ -190,6 +213,7 @@ section#portfolio{
   cursor: pointer;
   background-color: transparent;
 }
+
 .portfolio-modal .close-modal:hover {
   opacity: 0.3;
 }
@@ -199,19 +223,15 @@ section#portfolio{
   height: auto;
 }
 
-.mb-4, .my-4 {
-  margin-bottom: 1.5rem!important;
+.mb-4,
+.my-4 {
+  margin-bottom: 1.5rem !important;
 }
 
-*, ::after, ::before {
+*,
+::after,
+::before {
   box-sizing: border-box;
 }
 
 /*end of portofolio berita*/
-
-
-
-
-
-
-
