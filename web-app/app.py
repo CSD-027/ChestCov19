@@ -39,8 +39,15 @@ def kuch_bhi():
 
 @app.route("/about")
 def about_page():
-    return "About You..!!!"
+    return render_template("about.html")
 
+@app.route("/contact")
+def contact_page():
+    return render_template("contact.html")
+
+@app.route("/info")
+def info_page():
+    return render_template("info.html")
 
 @app.route("/submit", methods=['GET', 'POST'])
 def get_hours():
