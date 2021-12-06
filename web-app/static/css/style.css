@@ -10,12 +10,16 @@ main {
   box-sizing: border-box;
 }
 
-li, a, button {
+li, a {
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
   font-size: 17px;
   color: #24252A;
   text-decoration: none;
+}
+
+li {
+  margin-top: 10px;
 }
 
 header {
@@ -24,6 +28,10 @@ header {
   align-items: center;
   background-color: #eeeeee;
   padding: 20px 7%;
+}
+
+button {
+  color: #eeeeee;
 }
 
 .logo {
