@@ -53,6 +53,22 @@ def news1_page():
 def news2_page():
     return render_template("news/bos_pfizer_cemas_omicron.html")
 
+@app.route("/info/100_juta_rakyat_telah_divaksin")
+def news3_page():
+    return render_template("news/100_juta_rakyat_telah_divaksin.html")
+
+@app.route("/info/kemenkes_bantah_varian_omicron")
+def news4_page():
+    return render_template("/news/menkes_bantah_omicron.html")
+
+@app.route("/info/pembatasan_akhir_tahun_harus")
+def news5_page():
+    return render_template("/news/pembatasan_mobilitas_akhir_tahun.html")
+
+@app.route("/info/covid_dorong_digitalisasi_pendidikan")
+def news6_page():
+    return render_template("/news/covid_dorong_digitalisasi_pendidikan.html")
+
 @app.route("/info")
 def info_page():
     return render_template("info.html")
