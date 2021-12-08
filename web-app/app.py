@@ -49,6 +49,10 @@ def contact_page():
 def news1_page():
     return render_template("news/virus_corona_omicron.html")
 
+@app.route("/info/bos_pfizer_cemas_omicron")
+def news2_page():
+    return render_template("news/bos_pfizer_cemas_omicron.html")
+
 @app.route("/info")
 def info_page():
     return render_template("info.html")
