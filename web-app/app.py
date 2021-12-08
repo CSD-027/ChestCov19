@@ -45,6 +45,10 @@ def about_page():
 def contact_page():
     return render_template("contact.html")
 
+@app.route("/info/virus_corona_omicron")
+def news1_page():
+    return render_template("news/virus_corona_omicron.html")
+
 @app.route("/info")
 def info_page():
     return render_template("info.html")

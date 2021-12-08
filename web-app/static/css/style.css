@@ -235,3 +235,43 @@ section#portfolio {
 }
 
 /*end of portofolio berita*/
+
+/*css for news page*/
+
+.image_news_header {
+  margin-top: 10px;
+  border-radius: 8px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  cursor: pointer;
+  transition: all 0.5s ease 0s;
+}
+
+.image_news_header:hover {
+  filter: brightness(110%);
+  transform: scale(1.1);
+}
+
+.text_hader_news {
+  padding: 16px;
+}
+
+.news_content {
+  padding-top: 10px;
+  padding-left:30px;
+  padding-right:30px;
+}
+
+.content_video { 
+  float: none;
+  clear: both;
+  width: 700px;
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 25px;
+  height: 0;
+  margin: 0 auto;
+  max-width: 100%;
+}
