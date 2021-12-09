@@ -275,3 +275,38 @@ section#portfolio {
   margin: 0 auto;
   max-width: 100%;
 }
+
+/* Make sure that padding behaves as expected */
+* {box-sizing:border-box}
+
+/* Container for skill bars */
+.container_bar {
+  width: 100%; /* Full width */
+  background-color: #ddd; /* Grey background */
+}
+
+.skills {
+  text-align: right; /* Right-align text */
+  padding-top: 10px; /* Add top padding */
+  padding-bottom: 10px; /* Add bottom padding */
+  color: white; /* White text color */
+}
+
+.css {width: 80%; background-color: #2196F3;} /* Blue */
+.html {width: 90%; background-color: #04AA6D;} /* Green */
+
+.image_prediction {
+  margin-top: 30px;
+  border-radius: 8px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  cursor: pointer;
+  transition: all 0.5s ease 0s;
+}
+
+.image_prediction:hover {
+  filter: brightness(110%);
+  transform: scale(1.5);
+}

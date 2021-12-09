@@ -34,7 +34,8 @@
     <!--using https://ruyadorno.github.io/simple-slider/ -->
     <div style="top: -300px; margin-top: 0px;">
       <div style="position: absolute; width:100%; height:450px" data-simple-slider>
-        <img style="width: 100%;" src="https://cdn.pixabay.com/photo/2020/03/08/23/23/coronavirus-4914026_960_720.jpg" />
+        <img style="width: 100%;"
+          src="https://cdn.pixabay.com/photo/2020/03/08/23/23/coronavirus-4914026_960_720.jpg" />
         <img style="width: 100%;" src="https://cdn.pixabay.com/photo/2021/05/22/21/32/man-6274651_960_720.jpg" />
         <img style="width: 100%;" src="https://cdn.pixabay.com/photo/2020/03/31/14/04/covid-19-4987797_960_720.jpg" />
         <img style="width: 100%;" src="https://cdn.pixabay.com/photo/2020/03/15/17/22/mask-4934337_960_720.jpg" />
@@ -47,8 +48,10 @@
     </script>
 
     <div class="container">
-      <h1 class="jumbotron bg-primary">Website Pendeteksi Covid-19 berdasarkan Chest X-Ray (Web ChestCov-19)
-      </h1>
+      <div class="text-center portfolio1">
+        <h1 class="section-headtext-uppercase">Website Pendeteksi Covid-19 berdasarkan Chest X-Ray (Web
+          ChestCov-19)<br><br></h2>
+      </div>
       <br><br>
       <form class="form-horizontal" action="/submit" method="post" enctype="multipart/form-data">
 
@@ -67,15 +70,26 @@
       </form>
 
       {% if name %}
-      <img src="{{url_for('static', filename='img/' + name)}}" height="400px" width="400px" />
-      <h2> Prediction : <i> {{prediction}} </i></h2>
+      <center><img class="image_prediction" src="{{url_for('static', filename='img/' + name)}}" height="400px" width="400px" /></center>
+      <center><h2 style="margin-top: 30px;"> Prediction : <i> {{prediction}} </i></h2></center>
       <!--
     <h2> Filename   : <i> {{name}} </i></h2>
     <h2> Image path   : <i> {{img_path}} </i></h2>
     -->
-      <h2> Label Percentage : <i> {{percentage}}% </i></h2>
-      <h2> Similarity Index : <i> {{similarity}} </i></h2>
-      {% endif %}
+
+      <p>Label Percentage</p>
+      <div class="container_bar">
+        <div class="skills css">{{percentage}}%</div>
+      </div>
+
+      <p style="margin-top: 20px;">Similarity Index</p>
+      <div class="container_bar">
+        <div class="skills html">{{similarity}}</div>
+      </div>
+
+      <!-- <h2> Label Percentage : <i> {{percentage}}% </i></h2> -->
+      <!-- <h2> Similarity Index : <i> {{similarity}} </i></h2>
+      {% endif %} -->
 
     </div>
 
@@ -84,8 +98,10 @@
 
 </body>
 
-<footer>
-  <span><center>CSD-027 &copy 2021 </center></span>
+<footer style="margin-top: 20px;">
+  <span>
+    <center>CSD-027 &copy 2021 </center>
+  </span>
 </footer>
 
 </html>
