@@ -12,6 +12,7 @@
     url_for('static', filename='script/app.js') }}"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
 </head>
 
 <body>
@@ -70,25 +71,36 @@
       </form>
 
       {% if name %}
-      <center><img class="image_prediction" src="{{url_for('static', filename='img/' + name)}}" height="400px" width="400px" /></center>
-      <center><h2 style="margin-top: 30px;"> Prediction : <i> {{prediction}} </i></h2></center>
+      <center><img class="image_prediction" src="{{url_for('static', filename='img/' + name)}}" height="400px"
+          width="400px" /></center>
+      <center>
+        <h2 style="margin-top: 30px;"> Prediction : <i> {{prediction}} </i></h2>
+      </center>
       <!--
     <h2> Filename   : <i> {{name}} </i></h2>
     <h2> Image path   : <i> {{img_path}} </i></h2>
     -->
 
-      <p>Label Percentage</p>
-      <div class="container_bar">
-        <div class="skills css">{{percentage}}%</div>
-      </div>
+      <!-- ambil parameter dari {{percentage}} value nya di masukin ke css susah, karna untuk seperti progress bar sesuai
+      percentage hasil prediksi gitu,
+      engga bisa :() -->
 
-      <p style="margin-top: 20px;">Similarity Index</p>
-      <div class="container_bar">
-        <div class="skills html">{{similarity}}</div>
-      </div>
+      <p>Label Percentage</1p>
+        <div class="container_bar">
+          <center>
+            <div class="skills css">{{percentage}}%</div>
+          </center>
+        </div>
 
-      <!-- <h2> Label Percentage : <i> {{percentage}}% </i></h2> -->
-      <!-- <h2> Similarity Index : <i> {{similarity}} </i></h2>
+        <p style="margin-top: 20px;">Similarity Index</p>
+        <div class="container_bar">
+          <center>
+            <div class="skills html">{{similarity}}</div>
+          </center>
+        </div>
+
+        <!-- <h2> Label Percentage : <i> {{percentage}}% </i></h2> -->
+        <!-- <h2> Similarity Index : <i> {{similarity}} </i></h2>
       {% endif %} -->
 
     </div>
