@@ -69,21 +69,20 @@
           </div>
         </div>
       </form>
-
       {% if name %}
       <center><img class="image_prediction" src="{{url_for('static', filename='img/' + name)}}" height="400px"
           width="400px" /></center>
       <center>
         <h2 style="margin-top: 30px;"> Prediction : <i> {{prediction}} </i></h2>
       </center>
-      <!--
+    <!--
     <h2> Filename   : <i> {{name}} </i></h2>
     <h2> Image path   : <i> {{img_path}} </i></h2>
     -->
 
       <!-- ambil parameter dari {{percentage}} value nya di masukin ke css susah, karna untuk seperti progress bar sesuai
       percentage hasil prediksi gitu,
-      engga bisa :() -->
+      engga bisa :()-->
 
       <p>Label Percentage</1p>
         <div class="container_bar">
