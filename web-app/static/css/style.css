@@ -349,3 +349,95 @@ div {
   width: 50%;
 }
 
+.column {
+  float: left;
+  width: 25%;
+  padding: 0 30px;
+}
+
+.row {margin: 0 -5px;
+align-items: center;}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;
+}
+
+.card-konfirm {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); 
+  padding: 16px;
+  text-align: center;
+  color: white;
+  border-radius: 8px;
+  background-color: #2c347c;
+  cursor: pointer;
+  transition: all 0.5s ease 0s;
+}
+
+.card-konfirm:hover {
+  filter: brightness(120%);
+}
+
+
+.card-death {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  color: white;
+  border-radius: 8px;
+  background-color: #ec6f58;
+  cursor: pointer;
+  transition: all 0.5s ease 0s;
+}
+
+.card-death:hover {
+  filter: brightness(120%);
+}
+
+
+.card-recover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  color: white;
+  border-radius: 8px;
+  background-color: #3c928c;
+  cursor: pointer;
+  transition: all 0.5s ease 0s;
+}
+
+.card-recover:hover {
+  filter: brightness(120%);
+}
+
+.card-lastupdate {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  color: white;
+  border-radius: 8px;
+  background-color: #ceb546;
+  cursor: pointer;
+  transition: all 0.5s ease 0s;
+}
+
+.card-lastupdate:hover {
+  filter: brightness(120%);
+}
+
+
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
