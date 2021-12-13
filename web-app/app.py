@@ -6,7 +6,8 @@ from flask import Flask, flash, request, redirect, url_for
 from werkzeug.utils import secure_filename
 import numpy as np
 
-UPLOAD_FOLDER = os.getcwd() + "\static\img"
+sep_ = os.path.sep
+UPLOAD_FOLDER = f"{os.getcwd()}{sep_}static{sep_}img"
 
 app = Flask(__name__)
 
