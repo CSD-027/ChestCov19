@@ -31,61 +31,6 @@
 
     <!-- untuk di isi nanti -->
 
-    <div class="text-center portfolio1">
-        <h1 class="section-headtext-uppercase">Perkembangan Covid Di Indonesia<br><br></h2>
-    </div>
-
-
-    <div class="row">
-        <div class="column">
-            <div class="card-konfirm">
-                <h1 id="totalcase">Loading...</h1>
-                <h2>Terkonfirmasi</h2>
-            </div>
-        </div>
-        <div class="column">
-            <div class="card-death">
-                <h1 id="death">Loading...</h1>
-                <h2>Meninggal</h2>
-            </div>
-        </div>
-        <div class="column">
-            <div class="card-recover">
-                <h1 id="recover">Loading...</h1>
-                <h2>Sembuh</h2>
-            </div>
-        </div>
-        <div class="column">
-            <div class="card-lastupdate">
-                <h1 id="lastupdate">Loading...</h1>
-                <h2>Terupdate</h2>
-            </div>
-        </div>
-    </div>
-
-
-    <script>
-        fetch('https://covid19.mathdro.id/api/countries/indonesia')
-            .then(res => res.json())
-            .then(data => document.getElementById("totalcase").innerHTML = data.confirmed.value.toString().replace(
-                /\B(?=(\d{3})+(?!\d))/g, ","));
-
-        fetch('https://covid19.mathdro.id/api/countries/indonesia')
-            .then(res => res.json())
-            .then(data => document.getElementById("death").innerHTML = data.deaths.value.toString().replace(
-                /\B(?=(\d{3})+(?!\d))/g, ","));
-
-        fetch('https://covid19.mathdro.id/api/countries/indonesia')
-            .then(res => res.json())
-            .then(data => document.getElementById("recover").innerHTML = data.recovered.value.toString().replace(
-                /\B(?=(\d{3})+(?!\d))/g, ","));
-
-        fetch('https://covid19.mathdro.id/api/countries/indonesia')
-            .then(res => res.json())
-            .then(data => document.getElementById("lastupdate").innerHTML = new Date(data.lastUpdate).toLocaleDateString('pt-PT'));
-    </script>
-
-
     <section class="page-section" id="portfolio">
         <div class="container p-4">
             <div class="text-center portfolio1">
@@ -105,8 +50,7 @@
                         <div class="portfolio-caption">
                             <div class="portfolio-caption-heading">Update Soal Kadinkes Bekasi Temukan 4 Warga DKI
                                 Terpapar Omicron</div>
-                            <div class="portfolio-caption-subheading text-muted">Reporter : Adi Nugroho
-                                (Merdeka.com)
+                            <div class="portfolio-caption-subheading text-muted">Reporter : Adi Nugroho (Merdeka.com)
                             </div>
                         </div>
                     </div>
@@ -121,11 +65,9 @@
                                 src="https://cdn.pixabay.com/photo/2020/12/13/23/40/woman-5829666_960_720.jpg" alt="" />
                         </a>
                         <div class="portfolio-caption">
-                            <div class="portfolio-caption-heading">Bos Pfizer Ungkap Kecemasannya pada Covid-19
-                                Varian
+                            <div class="portfolio-caption-heading">Bos Pfizer Ungkap Kecemasannya pada Covid-19 Varian
                                 Omicron</div>
-                            <div class="portfolio-caption-subheading text-muted">Novina Putri Bestari, CNBC
-                                Indonesia
+                            <div class="portfolio-caption-subheading text-muted">Novina Putri Bestari, CNBC Indonesia
                             </div>
                         </div>
                     </div>
@@ -141,11 +83,9 @@
                                 alt="" />
                         </a>
                         <div class="portfolio-caption">
-                            <div class="portfolio-caption-heading">100 Juta Warga Indonesia Telah Divaksinasi
-                                COVID-19
+                            <div class="portfolio-caption-heading">100 Juta Warga Indonesia Telah Divaksinasi COVID-19
                                 Dosis Lengkap</div>
-                            <div class="portfolio-caption-subheading text-muted">by Rokom Kementerian Kesehatan
-                            </div>
+                            <div class="portfolio-caption-subheading text-muted">by Rokom Kementerian Kesehatan</div>
                         </div>
                     </div>
                 </div>
@@ -167,8 +107,7 @@
                                 alt="" />
                         </a>
                         <div class="portfolio-caption">
-                            <div class="portfolio-caption-heading">Pemkab Bekasi Umumkan Covid Omicron Masuk,
-                                Kemenkes
+                            <div class="portfolio-caption-heading">Pemkab Bekasi Umumkan Covid Omicron Masuk, Kemenkes
                                 Bantah!</div>
                             <div class="portfolio-caption-subheading text-muted">CNBC Indonesia</div>
                         </div>
@@ -185,8 +124,7 @@
                                 alt="" />
                         </a>
                         <div class="portfolio-caption">
-                            <div class="portfolio-caption-heading">Pengamat: Pembatasan mobilitas akhir tahun
-                                diperlukan
+                            <div class="portfolio-caption-heading">Pengamat: Pembatasan mobilitas akhir tahun diperlukan
                                 cegah COVID-19</div>
                             <div class="portfolio-caption-subheading text-muted">antaranews.com</div>
                         </div>
@@ -202,17 +140,15 @@
                                 src="https://cdn.pixabay.com/photo/2020/06/11/04/02/mask-5285090_960_720.jpg" alt="" />
                         </a>
                         <div class="portfolio-caption">
-                            <div class="portfolio-caption-heading">Stafsus Presiden: COVID-19 dorong tren
-                                digitalisasi
-                                pendidikan</div>
+                            <div class="portfolio-caption-heading">Stafsus Presiden: COVID-19 dorong tren digitalisasi pendidikan</div>
                             <div class="portfolio-caption-subheading text-muted">antaranews.com</div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-    </main>
+
+        </main>
 
 </body>
 
