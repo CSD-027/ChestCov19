@@ -8,6 +8,8 @@ main {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
 }
 
 li,
@@ -24,11 +26,7 @@ li {
 }
 
 header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   background-color: #eeeeee;
-  padding: 20px 7%;
 }
 
 button {
@@ -260,11 +258,11 @@ section#portfolio {
 
 .news_content {
   padding-top: 10px;
-  padding-left:30px;
-  padding-right:30px;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
-.content_video { 
+.content_video {
   float: none;
   clear: both;
   width: 700px;
@@ -277,14 +275,18 @@ section#portfolio {
 }
 
 /* Make sure that padding behaves as expected */
-* {box-sizing:border-box}
+* {
+  box-sizing: border-box
+}
 
 /* Container for skill bars */
 .container_bar {
   cursor: pointer;
   transition: all 0.5s ease 0s;
-  width: 100%; /* Full width */
-  background-color: #ddd; /* Grey background */
+  width: 100%;
+  /* Full width */
+  background-color: #ddd;
+  /* Grey background */
 }
 
 .container_bar:hover {
@@ -292,15 +294,22 @@ section#portfolio {
 }
 
 .skills {
-  text-align: center; 
-  padding-top: 10px; 
-  padding-bottom: 10px; 
-  color: white; 
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: white;
   font-weight: bold;
 }
 
-.css {width: 100%; background-color: rgba(0, 136, 169, 1);} 
-.html {width: 100%; background-color: rgba(0, 136, 169, 1);} 
+.css {
+  width: 100%;
+  background-color: rgba(0, 136, 169, 1);
+}
+
+.html {
+  width: 100%;
+  background-color: rgba(0, 136, 169, 1);
+}
 
 .image_prediction {
   margin-top: 30px;
@@ -364,8 +373,10 @@ div {
   padding: 0 30px;
 }
 
-.row {margin: 0 -5px;
-align-items: center;}
+.row {
+  margin: 0 -5px;
+  align-items: center;
+}
 
 .row:after {
   content: "";
@@ -381,7 +392,7 @@ align-items: center;}
 }
 
 .card-konfirm {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); 
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   padding: 16px;
   text-align: center;
   color: white;
@@ -487,4 +498,172 @@ align-items: center;}
   border-radius: 10px;
   display: block;
   margin: auto;
+}
+
+nav {
+  height: 80;
+  width: 100%;
+}
+
+label.logos {
+  font-size: 35px;
+  font-weight: bold;
+  color: rgba(0, 136, 169, 1);
+  padding: 0 100px;
+  line-height: 80px;
+}
+
+nav ul {
+  float: right;
+  margin-right: 40px;
+}
+
+nav li {
+  display: inline-block;
+  margin: 0 8px;
+  line-height: 80px;
+}
+
+nav a {
+  color: black;
+  font-size: 18px;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+  padding: 7px 10px;
+  border-radius: 3px;
+}
+
+a.active,
+a:hover {
+  border: 1px solid black;
+}
+
+nav #icon {
+  color: black;
+  font-size: 30px;
+  line-height: 80px;
+  float: right;
+  margin-right: 40px;
+  cursor: pointer;
+  margin-right: 40px;
+  display: none;
+}
+
+@media (max-width: 1048px) {
+  label.logos {
+    font-size: 32px;
+    padding-left: 60px;
+  }
+
+  nav ul {
+    margin-right: 20px;
+  }
+
+  nav a {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 909px) {
+  nav #icon {
+    display: block;
+  }
+
+  nav ul {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #eeeeee;
+    top: 80px;
+    left: -100%;
+    text-align: center;
+    transition: all .5s;
+    z-index:10;
+  }
+
+  nav li {
+    display: block;
+    margin: 50px 0;
+    line-height: 30px;
+  }
+
+  nav a {
+    font-size: 20px;
+  }
+
+  a.active,
+  a:hover {
+    border: none;
+    color: rgba(0, 136, 169, 1);
+  }
+
+  nav ul.show {
+    left: 0;
+    z-index:10;
+  }
+}
+
+#slider {
+  overflow: hidden;
+  width: 100%;
+  height: 500px;
+}
+
+@media (max-width: 909px) {
+  #slider {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+#slider figure {
+  position: relative;
+  width: 500%;
+  margin: 0;
+  left: 0;
+  animation: 20s slider infinite;
+}
+
+#slider figure img {
+  width: 20%;
+  float: left;
+}
+
+@keyframes slider {
+  0% {
+    left: 0;
+  }
+
+  20% {
+    left: 0%;
+  }
+
+  25% {
+    left: -100%;
+  }
+
+  45% {
+    left: -100%;
+  }
+
+  50% {
+    left: -200%;
+  }
+
+  70% {
+    left: -200%;
+  }
+
+  75% {
+    left: -300%;
+  }
+
+  95% {
+    left: -300%;
+  }
+
+  100% {
+    left: -400%;
+  }
 }

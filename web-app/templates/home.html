@@ -5,48 +5,49 @@
   <title>ChestCov19</title>
   <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/2781/2781395.png">
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/style.css') }}">
   <script type=text/javascript src="{{
     url_for('static', filename='script/app.js') }}"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
 </head>
+
+<header>
+  <nav>
+    <label class="logos">ChestCov</label>
+    <ul>
+      <li><a class="active" href="/">Home</a></li>
+      <li><a href="/info">Covid News</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul>
+    <label id="icon">
+      <img src="static/burger_menu.png" />
+    </label>
+  </nav>
+  <script>
+    $(document).ready(function () {
+      $('#icon').click(function () {
+        $('ul').toggleClass('show');
+      });
+    });
+  </script>
+</header>
 
 <body>
 
-
-  <header>
-    <img style="width: 3%; height: 3%" class="logo" src="{{url_for('static', filename='covid-19.svg')}}">
-    <nav>
-      <ul class="nav__links">
-        <li><a href="/">Home</a></li>
-        <li><a href="info">Info Covid</a></li>
-        <li><a href="about">About Us</a></li>
-      </ul>
-    </nav>
-    <a class="cta" href="contact"><button>Contact</button></a>
-  </header>
-
-  <main>
-
-    <!--using https://ruyadorno.github.io/simple-slider/ -->
-    <div style="top: -300px; margin-top: 0px;">
-      <div style="position: absolute; width:100%; height:450px" data-simple-slider>
-        <img style="width: 100%;"
-          src="https://cdn.pixabay.com/photo/2020/03/08/23/23/coronavirus-4914026_960_720.jpg" />
-        <img style="width: 100%;" src="https://cdn.pixabay.com/photo/2021/05/22/21/32/man-6274651_960_720.jpg" />
-        <img style="width: 100%;" src="https://cdn.pixabay.com/photo/2020/03/31/14/04/covid-19-4987797_960_720.jpg" />
-        <img style="width: 100%;" src="https://cdn.pixabay.com/photo/2020/03/15/17/22/mask-4934337_960_720.jpg" />
-        <img style="width: 100%;" src="https://cdn.pixabay.com/photo/2020/03/26/16/11/corona-4970836_960_720.jpg" />
-      </div>
-    </div>
-    <script src="https://rawgit.com/ruyadorno/simple-slider/master/dist/simpleslider.min.js"></script>
-    <script>
-      simpleslider.getSlider();
-    </script>
+  <div id="slider">
+    <figure>
+      <img src="https://cdn.pixabay.com/photo/2021/05/22/21/32/man-6274651_960_720.jpg">
+      <img src="https://cdn.pixabay.com/photo/2020/03/31/14/04/covid-19-4987797_960_720.jpg">
+      <img src="https://cdn.pixabay.com/photo/2020/03/15/17/22/mask-4934337_960_720.jpg">
+      <img src="https://cdn.pixabay.com/photo/2020/03/26/16/11/corona-4970836_960_720.jpg">
+      <img src="https://cdn.pixabay.com/photo/2021/05/22/21/32/man-6274651_960_720.jpg">
+    </figure>
+  </div>
 
     <div class="container">
       <div class="text-center portfolio1">
@@ -75,7 +76,7 @@
       <center>
         <h2 style="margin-top: 30px;"> Prediction : <i> {{prediction}} </i></h2>
       </center>
-    <!--
+      <!--
     <h2> Filename   : <i> {{name}} </i></h2>
     <h2> Image path   : <i> {{img_path}} </i></h2>
     -->
@@ -96,12 +97,9 @@
 
         <!-- <h2> Label Percentage : <i> {{percentage}}% </i></h2> -->
         <!-- <h2> Similarity Index : <i> {{similarity}} </i></h2> -->
-      {% endif %}
+        {% endif %}
 
     </div>
-
-
-  </main>
 
 </body>
 

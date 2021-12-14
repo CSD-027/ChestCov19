@@ -18,15 +18,25 @@
 
 
     <header>
-        <img style="width: 3%; height: 3%" class="logo" src="{{url_for('static', filename='covid-19.svg')}}">
         <nav>
-            <ul class="nav__links">
-                <li><a href="/">Home</a></li>
-                <li><a href="info">Info Covid</a></li>
-                <li><a href="about">About Us</a></li>
+            <label class="logos">ChestCov</label>
+            <ul>
+              <li><a href="/">Home</a></li>
+              <li><a class="active" href="/info">Covid News</a></li>
+              <li><a href="/about">About Us</a></li>
+              <li><a href="/contact">Contact</a></li>
             </ul>
-        </nav>
-        <a class="cta" href="contact"><button>Contact</button></a>
+            <label id="icon">
+              <img src="static/burger_menu.png" />
+            </label>
+          </nav>
+          <script>
+            $(document).ready(function () {
+              $('#icon').click(function () {
+                $('ul').toggleClass('show');
+              });
+            });
+          </script>
     </header>
 
     <!-- untuk di isi nanti -->
@@ -204,7 +214,7 @@
             </div>
         </div>
 
-        </main>
+      
 
 </body>
 

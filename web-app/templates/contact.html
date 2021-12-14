@@ -18,15 +18,25 @@
 
 
   <header>
-    <img style="width: 3%; height: 3%" class="logo" src="{{url_for('static', filename='covid-19.svg')}}">
     <nav>
-      <ul class="nav__links">
+      <label class="logos">ChestCov</label>
+      <ul>
         <li><a href="/">Home</a></li>
-        <li><a href="info">Info Covid</a></li>
-        <li><a href="about">About Us</a></li>
+        <li><a href="/info">Covid News</a></li>
+        <li><a href="/about">About Us</a></li>
+        <li><a class="active" href="/contact">Contact</a></li>
       </ul>
+      <label id="icon">
+        <img src="static/burger_menu.png" />
+      </label>
     </nav>
-    <a class="cta" href="contact"><button>Contact</button></a>
+    <script>
+      $(document).ready(function () {
+        $('#icon').click(function () {
+          $('ul').toggleClass('show');
+        });
+      });
+    </script>
   </header>
 
   <div class="text-center portfolio1">
