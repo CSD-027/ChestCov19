@@ -461,6 +461,7 @@ align-items: center;}
   margin: auto;
   padding: 10px;
   flex: 25%;
+  font-size: 20px
 }
 
 .footer-right {
@@ -472,10 +473,11 @@ align-items: center;}
 .footer-right {
   padding: 10px;
   flex: 50%;
+  font-size: 20px;
 }
 
 .bio {
-  font-size: 20px;
+  font-size: 15px;
   font-family: Arial, Helvetica, sans-serif;
   text-align: justify;
 }
@@ -487,4 +489,8 @@ align-items: center;}
   border-radius: 10px;
   display: block;
   margin: auto;
+}
+
+.lead{
+  text-align: justify;
 }
