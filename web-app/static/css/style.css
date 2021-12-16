@@ -27,6 +27,7 @@ li {
 
 header {
   background-color: #eeeeee;
+  z-index:10;
 }
 
 button {
@@ -36,23 +37,6 @@ button {
 .logo {
   cursor: pointer;
 
-}
-
-.nav__links {
-  list-style: none;
-}
-
-.nav__links li {
-  display: inline-block;
-  padding: 0px 20px;
-}
-
-.nav__links li a {
-  transition: all 0.3s ease 0s;
-}
-
-.nav__links li a:hover {
-  color: #0088a9;
 }
 
 button {
@@ -674,3 +658,11 @@ nav #icon {
 .lead{
   text-align: justify;
 }
+
+.sticky {
+	position: -webkit-sticky;
+	position: sticky;
+	top: 0;
+}
+
+
