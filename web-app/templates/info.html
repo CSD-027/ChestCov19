@@ -19,22 +19,22 @@
         <nav>
             <label class="logos">ChestCov</label>
             <ul>
-              <li><a href="/">Home</a></li>
-              <li><a class="active" href="/info">Covid News</a></li>
-              <li><a href="/about">About Us</a></li>
-              <li><a href="/contact">Contact</a></li>
+                <li><a href="/">Home</a></li>
+                <li><a class="active" href="/info">Covid News</a></li>
+                <li><a href="/about">About Us</a></li>
+                <li><a href="/contact">Contact</a></li>
             </ul>
             <label id="icon">
-              <img src="static/burger_menu.png" />
+                <img src="static/burger_menu.png" />
             </label>
-          </nav>
-          <script>
+        </nav>
+        <script>
             $(document).ready(function () {
-              $('#icon').click(function () {
-                $('ul').toggleClass('show');
-              });
+                $('#icon').click(function () {
+                    $('ul').toggleClass('show');
+                });
             });
-          </script>
+        </script>
     </header>
 
     <!-- untuk di isi nanti -->
@@ -92,7 +92,6 @@
             .then(data => document.getElementById("lastupdate").innerHTML = new Date(data.lastUpdate)
                 .toLocaleDateString('pt-PT'));
     </script>
-
 
     <section class="page-section" id="portfolio">
         <div class="container p-4">
@@ -212,7 +211,34 @@
             </div>
         </div>
 
-      
+        <button onclick="getNews()">Test</button>
+
+        <div class="container p-4" style="margin-top: 10px;">
+            <div class="text-center portfolio1">
+            </div>
+            <div class="row" id="row-news"></div>
+        </div>
+    </section>
+    <script>
+        function getNews() {
+            const rowNews = document.getElementById('row-news');
+            let url = `https://csd027newsapi.herokuapp.com/merdeka/sehat/`
+
+            fetch(url).then((res)=>{
+                return res.json()
+            }).then((data)=>{
+                console.log(data)
+                data.data.posts.forEach(posts => {
+                console.log("ini data for each");
+                document.getElementById("row-news").innerHTML += posts.description;
+                // console.log(posts.description)
+                //   let rowNews = document.createElement('li');
+                //   let a = document.createElement
+                });
+            })
+        }
+    </script>
+
 
 </body>
 
