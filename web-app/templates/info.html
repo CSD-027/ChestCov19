@@ -39,13 +39,20 @@
     <!-- untuk di isi nanti -->
 
     <div class="text-center portfolio1">
-        <h1 class="section-headtext-uppercase" style="font-family: sans-serif;">Perkembangan Covid Di Indonesia<br><br></h2>
+        <h1 class="section-headtext-uppercase" style="font-family: sans-serif;">Perkembangan Covid Di Indonesia<br><br>
+            </h2>
+    </div>
+
+    <div class="text-center portfolio1">
+        <h2 id="lastUpdate" class="section-headtext-uppercase" style="font-family: sans-serif;">Perkembangan Covid Di
+            Indonesia<br><br></h2>
     </div>
 
     <div class="row">
         <div class="column">
             <div class="card-konfirm">
                 <h1 id="totalcase">Loading...</h1>
+                <h1 id="add_case">Loading...</h1>
                 <h2>Terkonfirmasi</h2>
             </div>
         </div>
@@ -62,34 +69,50 @@
             </div>
         </div>
         <div class="column">
-            <div class="card-lastupdate">
-                <h1 id="lastupdate">Loading...</h1>
-                <h2>Terupdate</h2>
+            <div class="card-dirawat">
+                <h1 id="dirawat">Loading...</h1>
+                <h2>Dirawat</h2>
             </div>
         </div>
     </div>
-
+    <!-- Script for daily cases -->
 
     <script>
-        fetch('https://covid19.mathdro.id/api/countries/indonesia')
+        fetch('https://csd027covidapis.herokuapp.com/api/indonesia/harian')
             .then(res => res.json())
-            .then(data => document.getElementById("totalcase").innerHTML = data.confirmed.value.toString().replace(
+            .then(data => document.getElementById("totalcase").innerHTML = data.positif.toString().replace(
+                /\B(?=(\d{3})+(?!\d))/g, ","));
+    </script>
+
+
+    <!-- Script for Realtime covid cases -->
+    <script>
+        fetch('https://csd027covidapis.herokuapp.com/api/indonesia')
+            .then(res => res.json())
+            .then(data => document.getElementById("totalcase").innerHTML = data.positif.toString().replace(
                 /\B(?=(\d{3})+(?!\d))/g, ","));
 
-        fetch('https://covid19.mathdro.id/api/countries/indonesia')
+        fetch('https://csd027covidapis.herokuapp.com/api/indonesia')
             .then(res => res.json())
-            .then(data => document.getElementById("death").innerHTML = data.deaths.value.toString().replace(
+            .then(data => document.getElementById("death").innerHTML = data.meninggal.toString().replace(
                 /\B(?=(\d{3})+(?!\d))/g, ","));
 
-        fetch('https://covid19.mathdro.id/api/countries/indonesia')
+        fetch('https://csd027covidapis.herokuapp.com/api/indonesia')
             .then(res => res.json())
-            .then(data => document.getElementById("recover").innerHTML = data.recovered.value.toString().replace(
+            .then(data => document.getElementById("recover").innerHTML = data.sembuh.toString().replace(
                 /\B(?=(\d{3})+(?!\d))/g, ","));
 
-        fetch('https://covid19.mathdro.id/api/countries/indonesia')
+        fetch('https://csd027covidapis.herokuapp.com/api/indonesia')
             .then(res => res.json())
-            .then(data => document.getElementById("lastupdate").innerHTML = new Date(data.lastUpdate)
-                .toLocaleDateString('pt-PT'));
+            .then(data => document.getElementById("dirawat").innerHTML = data.dirawat.toString().replace(
+                /\B(?=(\d{3})+(?!\d))/g, ","));
+
+        fetch('https://csd027covidapis.herokuapp.com/api/indonesia')
+            .then(res => res.json())
+            .then(data => document.getElementById("lastUpdate").innerHTML = "Data Terupdate Pada Tanggal " + new Date(
+                data
+                .lastUpdate).toLocaleDateString(
+                'pt-PT'));
     </script>
 
     <div class="text-center portfolio1">
