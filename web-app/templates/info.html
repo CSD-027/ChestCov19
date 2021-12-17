@@ -44,7 +44,7 @@
     </div>
 
     <div class="text-center portfolio1">
-        <h2 id="lastUpdate" class="section-headtext-uppercase" style="font-family: sans-serif;">Perkembangan Covid Di
+        <h2 id="lastUpdate" class="section-headtext-uppercase" style="font-family: sans-serif; margin-bottom: 20px;">Perkembangan Covid Di
             Indonesia<br><br></h2>
     </div>
 
@@ -52,26 +52,29 @@
         <div class="column">
             <div class="card-konfirm">
                 <h1 id="totalcase">Loading...</h1>
-                <h1 id="add_case">Loading...</h1>
-                <h2>Terkonfirmasi</h2>
+                <h2 id="add_case">Loading...</h2>
+                <h3>Terkonfirmasi</h3>
             </div>
         </div>
         <div class="column">
             <div class="card-death">
                 <h1 id="death">Loading...</h1>
-                <h2>Meninggal</h2>
+                <h2 id="add_death">Loading...</h2>
+                <h3>Meninggal</h3>
             </div>
         </div>
         <div class="column">
             <div class="card-recover">
                 <h1 id="recover">Loading...</h1>
-                <h2>Sembuh</h2>
+                <h2 id="add_recover">Loading...</h2>
+                <h3>Sembuh</h3>
             </div>
         </div>
         <div class="column">
             <div class="card-dirawat">
                 <h1 id="dirawat">Loading...</h1>
-                <h2>Dirawat</h2>
+                <h2 id="add_dirawat">Loading...</h2>
+                <h3>Dirawat</h3>
             </div>
         </div>
     </div>
@@ -80,8 +83,48 @@
     <script>
         fetch('https://csd027covidapis.herokuapp.com/api/indonesia/harian')
             .then(res => res.json())
-            .then(data => document.getElementById("totalcase").innerHTML = data.positif.toString().replace(
-                /\B(?=(\d{3})+(?!\d))/g, ","));
+            .then(data => document.getElementById("add_case").innerHTML = "+" + data[data.length - 1].positif.toString()
+                .replace(
+                    /\B(?=(\d{3})+(?!\d))/g, ","));
+
+        fetch('https://csd027covidapis.herokuapp.com/api/indonesia/harian')
+            .then(res => res.json())
+            .then(data => document.getElementById("add_death").innerHTML = "+" + data[data.length - 1].meninggal
+                .toString().replace(
+                    /\B(?=(\d{3})+(?!\d))/g, ","));
+
+        fetch('https://csd027covidapis.herokuapp.com/api/indonesia/harian')
+            .then(res => res.json())
+            .then(data => document.getElementById("add_recover").innerHTML = "+" + data[data.length - 1].sembuh
+                .toString()
+                .replace(
+                    /\B(?=(\d{3})+(?!\d))/g, ","));
+
+        fetch('https://csd027covidapis.herokuapp.com/api/indonesia/harian')
+            .then(res => res.json())
+            .then(data => document.getElementById("add_dirawat").innerHTML = "+" + data[data.length - 1]
+                .dirawat.toString()
+                .replace(
+                    /\B(?=(\d{3})+(?!\d))/g, ","));
+
+
+        // fetch('https://csd027covidapis.herokuapp.com/api/indonesia/harian')
+        //     .then(res => res.json())
+        //     .then(data => document.getElementById("add_case").innerHTML = "+" + data[data.length - 1].positif.toString()
+        //         .replace(
+        //             /\B(?=(\d{3})+(?!\d))/g, ",")
+        //         .then(data => document.getElementById("add_death").innerHTML = "+" + data[data.length - 1]
+        //             .meninggal.toString().replace(
+        //                 /\B(?=(\d{3})+(?!\d))/g, ","))
+        //         .then(data => document.getElementById("add_recover").innerHTML = "+" + data[data.length - 1]
+        //             .sembuh.toString()
+        //             .replace(
+        //                 /\B(?=(\d{3})+(?!\d))/g, ","))
+        //         .then(data => document.getElementById("add_dirawat").innerHTML = "+" + data[data.length - 1]
+        //             .dirawat.toString()
+        //             .replace(
+        //                 /\B(?=(\d{3})+(?!\d))/g, ","))
+        //     );
     </script>
 
 
@@ -114,6 +157,8 @@
                 .lastUpdate).toLocaleDateString(
                 'pt-PT'));
     </script>
+
+<center><iframe src="https://ourworldindata.org/grapher/total-cases-covid-19?tab=map" width="80%" height="600px" style="margin: 30px;"></iframe></center>
 
     <div class="text-center portfolio1">
         <h1 class="section-headtext-uppercase" style="font-family: sans-serif;">Berita Terbaru Dari Cnbc<br><br></h2>
