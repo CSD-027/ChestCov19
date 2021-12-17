@@ -11,7 +11,7 @@ UPLOAD_FOLDER = f"{os.getcwd()}{sep_}static{sep_}img"
 
 app = Flask(__name__)
 
-dic = {0: 'covid', 1: 'normal', 2: 'pneunomia'}
+dic = {0: 'covid', 1: 'normal'}
 
 
 model = load_model('model.h5')
@@ -76,19 +76,32 @@ def info_page():
 
 @app.route("/submit", methods=['GET', 'POST'])
 def get_hours():
-    if request.method == 'POST':
-        img = request.files['my_image']
+    if request.method == "POST":
+        img = request.files["my_image"]
 
         # img_path = "/" + img.filename
         filename = make_unique(img.filename)
-        img.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-        img_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+        img.save(os.path.join(app.config["UPLOAD_FOLDER"], filename))
+        img_path = os.path.join(app.config["UPLOAD_FOLDER"], filename)
         p = predict_label(img_path)
         p = np.asarray(p)
-        index_max = np.argmax(p)
-        predict = dic[index_max]
 
-        return render_template("home.html", prediction=predict, img_path=img_path, name=filename, percentage=round(np.amax(p)*100, 2), similarity=p*100)
+        if p > 0.5:
+            hasil = "Normal"
+            close_to = 1
+        else:
+            hasil = "Covid-19"
+            close_to = 0
+
+        return render_template(
+            "home.html",
+            prediction=hasil,
+            img_path=img_path,
+            name=filename,
+            percentage="Hasil prediksi {} mendekati nilai {} yaitu {}".format(
+                p[0][0], close_to, hasil
+            ),
+        )
     return render_template("home.html")
 
 if __name__ == '__main__':
