@@ -10,6 +10,10 @@
   <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/style.css') }}">
   <script src="{{url_for('static', filename='script/progress.js')}}"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script type="text/javascript"
+    src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script src="{{url_for('static', filename='script/googletranslateinit.js')}}"></script>
+    <script src="{{url_for('static', filename='script/styledropdown.js')}}"></script>
 </head>
 
 <body>
@@ -28,6 +32,7 @@
         <li><a href="/info">Berita Covid</a></li>
         <li><a href="/about">Tentang</a></li>
         <li><a class="active" href="/contact">Kontak</a></li>
+        <li><div id="google_translate_element"></div></li>
       </ul>
       <label id="icon">
         <img src="static/burger_menu.png" />

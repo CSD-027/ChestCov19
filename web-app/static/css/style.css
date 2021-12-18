@@ -507,7 +507,9 @@ nav ul {
 nav li {
   display: inline-block;
   margin: 0 8px;
-  line-height: 80px;
+  margin-top: 25px;
+  align-items: center;
+  line-height: 30px;
 }
 
 nav a {
@@ -703,7 +705,7 @@ nav #icon {
 }
 
 .bar {
-  background-color: rgba(0, 136, 169, 1);
+  background-color: #3c928c;
   width: 0%;
   height: 5px;
   border-radius: 3px;
@@ -722,4 +724,16 @@ nav #icon {
   margin: 0px auto;
   font-family: helvetica;
   text-align: center;
+}
+
+.goog-te-banner-frame.skiptranslate {
+  display: none !important;
+}
+
+body {
+  top: 0px !important;
+}
+
+.goog-te-gadget-icon {
+  background: none !important;
 }
