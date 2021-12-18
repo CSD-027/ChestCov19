@@ -27,7 +27,7 @@ li {
 
 header {
   background-color: #eeeeee;
-  z-index:10;
+  z-index: 10;
 }
 
 button {
@@ -563,7 +563,7 @@ nav #icon {
     left: -100%;
     text-align: center;
     transition: all .5s;
-    z-index:10;
+    z-index: 10;
   }
 
   nav li {
@@ -584,7 +584,7 @@ nav #icon {
 
   nav ul.show {
     left: 0;
-    z-index:10;
+    z-index: 10;
   }
 }
 
@@ -654,14 +654,14 @@ nav #icon {
 
 }
 
-.lead{
+.lead {
   text-align: justify;
 }
 
 .sticky {
-	position: -webkit-sticky;
-	position: sticky;
-	top: 0;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
 }
 
 .grid-container {
@@ -681,7 +681,7 @@ nav #icon {
     display: grid;
     grid-template-columns: auto auto;
     padding: 10px;
-  }  
+  }
 }
 
 @media (max-width: 909px) {
@@ -689,5 +689,37 @@ nav #icon {
     display: grid;
     grid-template-columns: auto;
     padding: 10px;
-  }  
+  }
+}
+
+.progress {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background-color: #F2F2F2;
+}
+
+.bar {
+  background-color: rgba(0, 136, 169, 1);
+  width: 0%;
+  height: 5px;
+  border-radius: 3px;
+}
+
+.percent {
+  position: absolute;
+  display: inline-block;
+  top: 3px;
+  left: 48%;
+}
+
+#wrapper {
+  width: 995px;
+  padding: 0px;
+  margin: 0px auto;
+  font-family: helvetica;
+  text-align: center;
 }

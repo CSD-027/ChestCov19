@@ -8,32 +8,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/style.css') }}">
+    <script src="{{url_for('static', filename='script/progress.js')}}"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 
 <body onload="getNews()">
+    <div class='progress' id="progress_div">
+        <div class='bar' id='bar1'></div>
+        <div class='percent' id='percent1'></div>
+    </div>
 
     <header class="sticky">
         <nav>
             <label class="logos">ChestCov</label>
             <ul>
                 <li><a href="/">Home</a></li>
-                <li><a class="active" href="/info">Covid News</a></li>
-                <li><a href="/about">About Us</a></li>
-                <li><a href="/contact">Contact</a></li>
+                <li><a class="active" href="/info">Berita Covid</a></li>
+                <li><a href="/about">Tentang</a></li>
+                <li><a href="/contact">Kontak</a></li>
             </ul>
             <label id="icon">
                 <img src="static/burger_menu.png" />
             </label>
         </nav>
-        <script>
-            $(document).ready(function () {
-                $('#icon').click(function () {
-                    $('ul').toggleClass('show');
-                });
-            });
-        </script>
+        <script src="{{url_for('static', filename='script/toggle.js')}}"></script>
     </header>
 
     <!-- untuk di isi nanti -->
@@ -44,7 +42,8 @@
     </div>
 
     <div class="text-center portfolio1">
-        <h2 id="lastUpdate" class="section-headtext-uppercase" style="font-family: sans-serif; margin-bottom: 20px;">Perkembangan Covid Di
+        <h2 id="lastUpdate" class="section-headtext-uppercase" style="font-family: sans-serif; margin-bottom: 20px;">
+            Perkembangan Covid Di
             Indonesia<br><br></h2>
     </div>
 
@@ -79,86 +78,13 @@
         </div>
     </div>
     <!-- Script for daily cases -->
-
-    <script>
-        fetch('https://csd027covidapis.herokuapp.com/api/indonesia/harian')
-            .then(res => res.json())
-            .then(data => document.getElementById("add_case").innerHTML = "+" + data[data.length - 1].positif.toString()
-                .replace(
-                    /\B(?=(\d{3})+(?!\d))/g, ","));
-
-        fetch('https://csd027covidapis.herokuapp.com/api/indonesia/harian')
-            .then(res => res.json())
-            .then(data => document.getElementById("add_death").innerHTML = "+" + data[data.length - 1].meninggal
-                .toString().replace(
-                    /\B(?=(\d{3})+(?!\d))/g, ","));
-
-        fetch('https://csd027covidapis.herokuapp.com/api/indonesia/harian')
-            .then(res => res.json())
-            .then(data => document.getElementById("add_recover").innerHTML = "+" + data[data.length - 1].sembuh
-                .toString()
-                .replace(
-                    /\B(?=(\d{3})+(?!\d))/g, ","));
-
-        fetch('https://csd027covidapis.herokuapp.com/api/indonesia/harian')
-            .then(res => res.json())
-            .then(data => document.getElementById("add_dirawat").innerHTML = "+" + data[data.length - 1]
-                .dirawat.toString()
-                .replace(
-                    /\B(?=(\d{3})+(?!\d))/g, ","));
-
-
-        // fetch('https://csd027covidapis.herokuapp.com/api/indonesia/harian')
-        //     .then(res => res.json())
-        //     .then(data => document.getElementById("add_case").innerHTML = "+" + data[data.length - 1].positif.toString()
-        //         .replace(
-        //             /\B(?=(\d{3})+(?!\d))/g, ",")
-        //         .then(data => document.getElementById("add_death").innerHTML = "+" + data[data.length - 1]
-        //             .meninggal.toString().replace(
-        //                 /\B(?=(\d{3})+(?!\d))/g, ","))
-        //         .then(data => document.getElementById("add_recover").innerHTML = "+" + data[data.length - 1]
-        //             .sembuh.toString()
-        //             .replace(
-        //                 /\B(?=(\d{3})+(?!\d))/g, ","))
-        //         .then(data => document.getElementById("add_dirawat").innerHTML = "+" + data[data.length - 1]
-        //             .dirawat.toString()
-        //             .replace(
-        //                 /\B(?=(\d{3})+(?!\d))/g, ","))
-        //     );
-    </script>
-
+    <script src="{{url_for('static', filename='script/dailycases.js')}}"></script>
 
     <!-- Script for Realtime covid cases -->
-    <script>
-        fetch('https://csd027covidapis.herokuapp.com/api/indonesia')
-            .then(res => res.json())
-            .then(data => document.getElementById("totalcase").innerHTML = data.positif.toString().replace(
-                /\B(?=(\d{3})+(?!\d))/g, ","));
+    <script src="{{url_for('static', filename='script/totalcases.js')}}"></script>
 
-        fetch('https://csd027covidapis.herokuapp.com/api/indonesia')
-            .then(res => res.json())
-            .then(data => document.getElementById("death").innerHTML = data.meninggal.toString().replace(
-                /\B(?=(\d{3})+(?!\d))/g, ","));
-
-        fetch('https://csd027covidapis.herokuapp.com/api/indonesia')
-            .then(res => res.json())
-            .then(data => document.getElementById("recover").innerHTML = data.sembuh.toString().replace(
-                /\B(?=(\d{3})+(?!\d))/g, ","));
-
-        fetch('https://csd027covidapis.herokuapp.com/api/indonesia')
-            .then(res => res.json())
-            .then(data => document.getElementById("dirawat").innerHTML = data.dirawat.toString().replace(
-                /\B(?=(\d{3})+(?!\d))/g, ","));
-
-        fetch('https://csd027covidapis.herokuapp.com/api/indonesia')
-            .then(res => res.json())
-            .then(data => document.getElementById("lastUpdate").innerHTML = "Data Terupdate Pada Tanggal " + new Date(
-                data
-                .lastUpdate).toLocaleDateString(
-                'pt-PT'));
-    </script>
-
-<center><iframe src="https://ourworldindata.org/grapher/total-cases-covid-19?tab=map" width="80%" height="600px" style="margin: 30px;"></iframe></center>
+    <center><iframe src="https://ourworldindata.org/grapher/total-cases-covid-19?tab=map" width="80%" height="600px"
+            style="margin: 30px;"></iframe></center>
 
     <div class="text-center portfolio1">
         <h1 class="section-headtext-uppercase" style="font-family: sans-serif;">Berita Terbaru Dari Cnbc<br><br></h2>
@@ -171,44 +97,10 @@
             <div class="grid-container" id="row-news"></div>
         </div>
     </section>
-    <script>
-        function getNews() {
-            const rowNews = document.getElementById('row-news');
-            let url = `https://csd027newsapi.herokuapp.com/cnbc/terbaru/`
+   
+    <script src="{{url_for('static', filename='script/getnews.js')}}"></script>
 
-            fetch(url).then((res) => {
-                return res.json()
-            }).then((data) => {
-                console.log(data)
-                data.data.posts.forEach(posts => {
-                    console.log("ini data for each");
-                    const image = posts.thumbnail.toLowerCase()
-
-                    document.getElementById("row-news").innerHTML += ` <div class="grid-item">
-                    <div class="portfolio-item">
-                        <a class="portfolio-link" data-toggle="modal" href="${posts.link}" target="_blank" rel="noopener noreferrer">
-                            <div class="portfolio-hover">
-                                <div class="portfolio-hover-content"><i class="fa fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid"
-                                src="${posts.thumbnail.toLowerCase()}"
-                                alt="news image" />
-                        </a>
-                        <div class="portfolio-caption">
-                            <div class="portfolio-caption-heading">${posts.title}</div>
-                            <div class="portfolio-caption-subheading text-muted">${new Date(posts.pubDate).toLocaleDateString('pt-PT')}
-                        </div>
-                        </div>
-                    </div>
-                </div>`
-                    // console.log(posts.description)
-                    //   let rowNews = document.createElement('li');
-                    //   let a = document.createElement
-                });
-            })
-        }
-    </script>
-
+    <input type="hidden" id="progress_width" value="0">
 
 </body>
 

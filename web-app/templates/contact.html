@@ -8,11 +8,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/style.css') }}">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="{{url_for('static', filename='script/progress.js')}}"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 </head>
 
 <body>
+
+  <div class='progress' id="progress_div">
+    <div class='bar' id='bar1'></div>
+    <div class='percent' id='percent1'></div>
+  </div>
 
 
   <header class="sticky">
@@ -20,21 +25,15 @@
       <label class="logos">ChestCov</label>
       <ul>
         <li><a href="/">Home</a></li>
-        <li><a href="/info">Covid News</a></li>
-        <li><a href="/about">About Us</a></li>
-        <li><a class="active" href="/contact">Contact</a></li>
+        <li><a href="/info">Berita Covid</a></li>
+        <li><a href="/about">Tentang</a></li>
+        <li><a class="active" href="/contact">Kontak</a></li>
       </ul>
       <label id="icon">
         <img src="static/burger_menu.png" />
       </label>
     </nav>
-    <script>
-      $(document).ready(function () {
-        $('#icon').click(function () {
-          $('ul').toggleClass('show');
-        });
-      });
-    </script>
+    <script src="{{url_for('static', filename='script/toggle.js')}}"></script>
   </header>
 
   <div class="text-center portfolio1">
@@ -47,6 +46,8 @@
   </script>
 
   </main>
+
+  <input type="hidden" id="progress_width" value="0">
 
 </body>
 

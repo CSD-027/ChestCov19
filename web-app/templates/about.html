@@ -8,11 +8,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/style.css') }}">
+  <script src="{{url_for('static', filename='script/progress.js')}}"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 
 <body>
+
+  <div class='progress' id="progress_div">
+    <div class='bar' id='bar1'></div>
+    <div class='percent' id='percent1'></div>
+  </div>
 
 
   <header class="sticky">
@@ -20,85 +25,87 @@
       <label class="logos">ChestCov</label>
       <ul>
         <li><a href="/">Home</a></li>
-        <li><a href="/info">Covid News</a></li>
-        <li><a class="active" href="/about">About Us</a></li>
-        <li><a href="/contact">Contact</a></li>
+        <li><a href="/info">Berita Covid</a></li>
+        <li><a class="active" href="/about">Tentang</a></li>
+        <li><a href="/contact">Kontak</a></li>
       </ul>
       <label id="icon">
         <img src="static/burger_menu.png" />
       </label>
     </nav>
-    <script>
-      $(document).ready(function () {
-        $('#icon').click(function () {
-          $('ul').toggleClass('show');
-        });
-      });
-    </script>
+    <script src="{{url_for('static', filename='script/toggle.js')}}"></script>
   </header>
 
   <!-- untuk di isi nanti -->
-    <div class="container">
-      <div class="col service-panel">
-        <div class="col">
-          <div class="text-center portfolio1">
-            <h1 class="section-headtext-uppercase">Tentang Aplikasi<br><br></h1>
-          </div>
-          <img class="imageabout" src="https://www.sentineldiagnostics.com/wp-content/uploads/home-slider-covid-19.jpg">
-          <p class="lead">
-            <br>
-            Web ChestCov-19 merupakan aplikasi berbasis Website yang digunakan untuk mendeteksi kondisi Chest X-Ray terinfeksi oleh virus Covid, pneunomia, atau dalam keadaan normal.
-            Website ini berguna sebagai pendukung keputusan dokter dalam mendiagnosis kondisi paru-paru pasien, apakah kondisi paru-paru pasien dalam keadaan normal, terinfeksi Covid, atau Pneunomia.
-            Sasaran pengguna dari website ini merupakan para tenaga medis yang sedang berjuang untuk mengatasi maraknya virus Covid di Indonesia,
-            harapannya dengan adanya website ini dapat mempermudah tenaga medis untuk melakukan diagnosa dan dapat membantu memutus rantai penyebaran Covid lebih cepat.
-          </br>
-          </p>
+  <div class="container">
+    <div class="col service-panel">
+      <div class="col">
+        <div class="text-center portfolio1">
+          <h1 class="section-headtext-uppercase">Tentang Aplikasi<br><br></h1>
         </div>
+        <img class="imageabout" src="https://www.sentineldiagnostics.com/wp-content/uploads/home-slider-covid-19.jpg">
+        <p class="lead">
+          <br>
+          Web ChestCov-19 merupakan aplikasi berbasis Website yang digunakan untuk mendeteksi kondisi Chest X-Ray
+          terinfeksi oleh virus Covid, pneunomia, atau dalam keadaan normal.
+          Website ini berguna sebagai pendukung keputusan dokter dalam mendiagnosis kondisi paru-paru pasien, apakah
+          kondisi paru-paru pasien dalam keadaan normal, terinfeksi Covid, atau Pneunomia.
+          Sasaran pengguna dari website ini merupakan para tenaga medis yang sedang berjuang untuk mengatasi maraknya
+          virus Covid di Indonesia,
+          harapannya dengan adanya website ini dapat mempermudah tenaga medis untuk melakukan diagnosa dan dapat
+          membantu memutus rantai penyebaran Covid lebih cepat.
+          </br>
+        </p>
       </div>
     </div>
+  </div>
 
-    </section>
-    <div class="container">
-      <div class="col service-panel2">
-        <div class="col">
-            <div class="text-center portfolio1">
-              <h1 class="section-headtext-uppercase" style="font-family: sans-serif;">Tentang Kami<br><br></h1>
+  </section>
+  <div class="container">
+    <div class="col service-panel2">
+      <div class="col">
+        <div class="text-center portfolio1">
+          <h1 class="section-headtext-uppercase" style="font-family: sans-serif;">Tentang Kami<br><br></h1>
+        </div>
+        <aside id="aboutme" class="footer-container">
+          <div class="footer-left">
+            <div class="profile">
+              <img class="imgprofile" src="static/imgprofile/profil1.jpg" alt="">
             </div>
-            <aside id="aboutme" class="footer-container">
-                <div class="footer-left" >
-                    <div class="profile">
-                        <img class="imgprofile" src="static/imgprofile/profil1.jpg" alt="">
-                    </div>
-                </div>
-                <div class="footer-right" >
-                    <h7>CSD-027 Team</h7>
-                    <aside class="bio">
-                        Karlina Surya Witanto M014V6051
-                        <br>Informatika, Universitas Udayana</br>
-                    </aside>
-                </div>
-                <div class="footer-left" >
-                    <div class="profile">
-                        <img class="imgprofile" src="static/imgprofile/profil2.jpg" alt="">
-                    </div>
-                </div>
-                <div class="footer-right" >
-                    <h7>CSD-027 Team</h7>
-                    <aside class="bio">
-                        Dicky Arya Pratama M161R7120
-                        <br>Teknik Informatika, STMIK Bandung</br>
-                    </aside>
-                </div>
+          </div>
+          <div class="footer-right">
+            <h7>CSD-027 Team</h7>
+            <aside class="bio">
+              Karlina Surya Witanto M014V6051
+              <br>Informatika, Universitas Udayana</br>
             </aside>
           </div>
-        </div>
+          <div class="footer-left">
+            <div class="profile">
+              <img class="imgprofile" src="static/imgprofile/profil2.jpg" alt="">
+            </div>
+          </div>
+          <div class="footer-right">
+            <h7>CSD-027 Team</h7>
+            <aside class="bio">
+              Dicky Arya Pratama M161R7120
+              <br>Teknik Informatika, STMIK Bandung</br>
+            </aside>
+          </div>
+        </aside>
       </div>
+    </div>
+  </div>
   </section>
+
+  <input type="hidden" id="progress_width" value="0">
 
 </body>
 
 <footer>
-  <span><center>CSD-027 &copy 2021 </center></span>
+  <span>
+    <center>CSD-027 &copy 2021 </center>
+  </span>
 </footer>
 
 </html>
