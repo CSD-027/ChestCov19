@@ -11,9 +11,10 @@
     <script src="{{url_for('static', filename='script/progress.js')}}"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript"
-    src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+        src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <script src="{{url_for('static', filename='script/googletranslateinit.js')}}"></script>
     <script src="{{url_for('static', filename='script/styledropdown.js')}}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.6.2/dist/chart.min.js"></script>
 </head>
 
 <body onload="getNews()">
@@ -30,7 +31,9 @@
                 <li><a class="active" href="/info">Berita Covid</a></li>
                 <li><a href="/about">Tentang</a></li>
                 <li><a href="/contact">Kontak</a></li>
-                <li><div id="google_translate_element"></div></li>
+                <li>
+                    <div id="google_translate_element"></div>
+                </li>
             </ul>
             <label id="icon">
                 <img src="static/burger_menu.png" />
@@ -88,8 +91,25 @@
     <!-- Script for Realtime covid cases -->
     <script src="{{url_for('static', filename='script/totalcases.js')}}"></script>
 
+    <div class="text-center portfolio1">
+        <h1 class="section-headtext-uppercase" style="font-family: sans-serif;">Perkembangan Kasus Terkonfirmasi Positif Covid-19 Per-Hari<br><br>
+            </h2>
+    </div>
+
+    <canvas id="chartPositive" width="400" height="300" style="padding: 18px;" ></canvas>
+
+    <div class="text-center portfolio1">
+        <h1 class="section-headtext-uppercase" style="font-family: sans-serif;">Perkembangan Kasus Meninggal Per-Hari<br><br>
+            </h2>
+    </div>
+
+    <canvas id="chartDie" width="400" height="300" style="padding: 18px;" ></canvas>
+
     <center><iframe src="https://ourworldindata.org/grapher/total-cases-covid-19?tab=map" width="80%" height="600px"
             style="margin: 30px;"></iframe></center>
+
+    <!-- script for positive covid graph -->
+    <script src="{{url_for('static', filename='script/positivecaseschart.js')}}"></script>
 
     <div class="text-center portfolio1">
         <h1 class="section-headtext-uppercase" style="font-family: sans-serif;">Berita Terbaru Dari Cnbc<br><br></h2>
@@ -102,7 +122,7 @@
             <div class="grid-container" id="row-news"></div>
         </div>
     </section>
-   
+
     <script src="{{url_for('static', filename='script/getnews.js')}}"></script>
 
     <input type="hidden" id="progress_width" value="0">
