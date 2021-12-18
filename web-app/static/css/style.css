@@ -130,7 +130,7 @@ section#portfolio {
 }
 
 #portfolio .portfolio-item .portfolio-caption .portfolio-caption-heading {
-  font-size: 24px;
+  font-size: 20px;
   color: rgba(0, 136, 169, 1);
   font-family: "Poppins";
   text-transform: capitalize;
@@ -150,7 +150,6 @@ section#portfolio {
 
 #portfolio .portfolio-item:hover {
   filter: brightness(80%);
-  transform: scale(1.1);
 }
 
 .portfolio-modal .modal-dialog {
@@ -201,7 +200,8 @@ section#portfolio {
 }
 
 .img-fluid {
-  max-width: 100%;
+  max-width: max-content;
+  max-height: max-content;
   height: auto;
 }
 
@@ -519,8 +519,7 @@ nav a {
   border-radius: 3px;
 }
 
-a.active,
-a:hover {
+a.active {
   border: 1px solid black;
 }
 
@@ -665,4 +664,30 @@ nav #icon {
 	top: 0;
 }
 
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding: 10px;
+}
 
+.grid-item {
+  padding: 20px;
+  font-size: 20px;
+  text-align: center;
+}
+
+@media screen and (max-width: 1048px) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    padding: 10px;
+  }  
+}
+
+@media (max-width: 909px) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: auto;
+    padding: 10px;
+  }  
+}

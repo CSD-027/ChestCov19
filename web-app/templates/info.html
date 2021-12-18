@@ -168,7 +168,7 @@
         <div class="container p-4" style="margin-top: 10px;">
             <div class="text-center portfolio1">
             </div>
-            <div class="row" id="row-news"></div>
+            <div class="grid-container" id="row-news"></div>
         </div>
     </section>
     <script>
@@ -184,7 +184,7 @@
                     console.log("ini data for each");
                     const image = posts.thumbnail.toLowerCase()
 
-                    document.getElementById("row-news").innerHTML += ` <div class="col-lg-4 col-sm-6 mb-4">
+                    document.getElementById("row-news").innerHTML += ` <div class="grid-item">
                     <div class="portfolio-item">
                         <a class="portfolio-link" data-toggle="modal" href="${posts.link}" target="_blank" rel="noopener noreferrer">
                             <div class="portfolio-hover">
