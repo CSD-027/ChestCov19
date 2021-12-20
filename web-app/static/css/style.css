@@ -551,7 +551,7 @@ nav #icon {
   }
 }
 
-@media (max-width: 909px) {
+@media (max-width: 1220px) {
   nav #icon {
     display: block;
   }
