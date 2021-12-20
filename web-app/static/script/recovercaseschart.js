@@ -1,20 +1,20 @@
-chartAja();
-async function chartAja() {
+chartAjaRecoverCases();
+async function chartAjaRecoverCases() {
     const data = await getData();
-    const ctx = document.getElementById('chartPositive').getContext('2d');
+    const ctx = document.getElementById('chartRecover').getContext('2d');
     const myChart = new Chart(ctx, {
         type: 'line',
         data: {
             labels: data.xyear,
             datasets: [{
-                label: 'Positive Covid',
-                data: data.ypositive,
+                label: 'Recover Cases',
+                data: data.yrecover,
                 fill: false,
                 backgroundColor: [
-                    'rgba(44,52,124,255)',
+                    'rgba(60,146,140,255)',
                 ],
                 borderColor: [
-                    'rgba(44,52,124,255)',
+                    'rgba(60,146,140,255)',
                 ],
                 borderWidth: 1
             }]
@@ -25,7 +25,7 @@ async function chartAja() {
 async function getData() {
 
     const xyear = [];
-    const ypositive = [];
+    const yrecover = [];
 
     const response = await fetch('http://csd027covidapis.herokuapp.com/api/indonesia/csv/harian');
     const data = await response.text();
@@ -35,8 +35,8 @@ async function getData() {
         const row = elt.split(',');
         const year = row[9].replace('T00:00:00.000Z', '');
         xyear.push(year);
-        const positive = row[0];
-        ypositive.push(positive);
+        const recover = row[2];
+        yrecover.push(recover);
     });
-    return {xyear, ypositive};
+    return {xyear, yrecover};
 }
