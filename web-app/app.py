@@ -66,7 +66,7 @@ def get_hours():
             hasil = "Normal"
             close_to = 1
         else:
-            hasil = "Covid-19"
+            hasil = "Covid-19/Tidak Sehat"
             close_to = 0
 
         return render_template(
