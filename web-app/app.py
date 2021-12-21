@@ -28,9 +28,9 @@ from uuid import uuid4
 def make_unique(string):
     ident = uuid4().__str__()
     return f"{ident}-{string}"
+
+
 # routes
-
-
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 
@@ -55,7 +55,6 @@ def get_hours():
     if request.method == "POST":
         img = request.files["my_image"]
 
-        # img_path = "/" + img.filename
         filename = make_unique(img.filename)
         img.save(os.path.join(app.config["UPLOAD_FOLDER"], filename))
         img_path = os.path.join(app.config["UPLOAD_FOLDER"], filename)
