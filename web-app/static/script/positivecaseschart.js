@@ -27,7 +27,7 @@ async function getData() {
     const xyear = [];
     const ypositive = [];
 
-    const response = await fetch('http://csd027covidapis.herokuapp.com/api/indonesia/csv/harian');
+    const response = await fetch('https://csd027covidapis.herokuapp.com/api/indonesia/csv/harian');
     const data = await response.text();
     // console.log(data)
     const rows = data.split('\n');

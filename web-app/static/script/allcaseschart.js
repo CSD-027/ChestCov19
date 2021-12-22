@@ -68,7 +68,7 @@ async function getData() {
     const yrecover = [];
 
 
-    const response = await fetch('http://csd027covidapis.herokuapp.com/api/indonesia/csv/harian');
+    const response = await fetch('https://csd027covidapis.herokuapp.com/api/indonesia/csv/harian');
     const data = await response.text();
     const rows = data.split('\n');
     rows.forEach(elt => {

@@ -103,7 +103,7 @@ async function getData() {
     const yrecover = [];
     const ydie = [];
 
-    const response = await fetch('http://csd027covidapis.herokuapp.com/api/indonesia/csv/provinsi');
+    const response = await fetch('https://csd027covidapis.herokuapp.com/api/indonesia/csv/provinsi');
     const data = await response.text();
     const rows = data.split('\n');
     rows.forEach(elt => {
