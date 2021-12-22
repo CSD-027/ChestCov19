@@ -28,9 +28,9 @@ from uuid import uuid4
 def make_unique(string):
     ident = uuid4().__str__()
     return f"{ident}-{string}"
+
+
 # routes
-
-
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 
@@ -55,7 +55,6 @@ def get_hours():
     if request.method == "POST":
         img = request.files["my_image"]
 
-        # img_path = "/" + img.filename
         filename = make_unique(img.filename)
         img.save(os.path.join(app.config["UPLOAD_FOLDER"], filename))
         img_path = os.path.join(app.config["UPLOAD_FOLDER"], filename)
@@ -66,7 +65,7 @@ def get_hours():
             hasil = "Normal"
             close_to = 1
         else:
-            hasil = "Covid-19"
+            hasil = "Covid-19/Tidak Sehat"
             close_to = 0
 
         return render_template(
@@ -81,5 +80,4 @@ def get_hours():
     return render_template("home.html")
 
 if __name__ == '__main__':
-    # app.debug = True
     app.run(host="0.0.0.0", port=5050, debug=True)
