@@ -22,7 +22,7 @@ Model machine learning yang kami bangun menggunakan algoritma deep learning yait
 
 
 ### How to Use this Application? <br />
-* Kunjungi situs https://chestcov.inh.pw/
+* Kunjungi situs https://chestcov.pw
 * Pilih Home
 * Siapkan data *image* Chest X-Ray
 * Unggah data pada kolom unggah lalu klik *submit*
@@ -37,7 +37,10 @@ Model machine learning yang kami bangun menggunakan algoritma deep learning yait
 
 
 ### Link <br />
-* Link Deploy Website : https://chestcov.inh.pw/
+* Dataset : </br>
+https://www.kaggle.com/tawsifurrahman/covid19-radiography-database <br/>
+https://www.kaggle.com/praveengovi/coronahack-chest-xraydataset
+* Link Deploy Website : https://chestcov.pw
 * Link Video Presentasi : https://www.youtube.com/watch?v=js8rnvAtTmI
 * Link Video Demo Website :
 
@@ -51,7 +54,7 @@ Model machine learning yang kami bangun menggunakan algoritma deep learning yait
 ![chart](https://user-images.githubusercontent.com/64744593/146946174-5c7a1cc7-c595-45ce-9425-ef084185c750.jpeg)
 ![updatecov](https://user-images.githubusercontent.com/64744593/146946198-96a00d2e-5da9-49b4-bb32-c53060da7bdd.jpg)
 ![mapcov](https://user-images.githubusercontent.com/64744593/146946186-3187804e-c150-4651-a82e-e77f7c4161e3.jpg)
-![newscov](https://user-images.githubusercontent.com/64744593/146946192-9f443ff4-2748-434c-b018-bd6ffc12293a.jpg)
+![berita](https://user-images.githubusercontent.com/64744593/147089660-a1ee227a-58b9-4889-9b39-d3f1377e846d.jpg)
 * **ABOUT**
 ![screencapture-172-20-10-2-5050-about-2021-12-21-15_05_46](https://user-images.githubusercontent.com/64744593/146946818-f581f96d-5c00-4a30-9883-6052ec7bb9fe.png)
 * **CONTACT**
