@@ -42,7 +42,7 @@ https://www.kaggle.com/tawsifurrahman/covid19-radiography-database <br/>
 https://www.kaggle.com/praveengovi/coronahack-chest-xraydataset
 * Link Deploy Website : https://chestcov.pw
 * Link Video Presentasi : https://www.youtube.com/watch?v=nqZkhyGVucI
-* Link Video Demo Website :
+* Link Video Demo Website :https://www.youtube.com/watch?v=ut351WtxI_w
 
 
 ### Website Preview <br />
