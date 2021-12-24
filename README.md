@@ -1,4 +1,4 @@
-# Dicoding X Kampus Merdeka Final Capstone Project: Website Pendeteksi Covid-19 berdasarkan Chest X-Ray (Web ChestCov)
+# Dicoding X Kampus Merdeka Final Capstone Project: Website Pendeteksi Covid-19 berdasarkan Chest X-Ray (Web ChestCov19)
 
 
 CSD-027 Team Member: <br />
@@ -7,7 +7,7 @@ M161R7120 - Dicky Arya Pratama <br />
 
 
 ### Overview <br />
-Web ChestCov merupakan aplikasi berbasis Website yang digunakan untuk mendeteksi kondisi Chest X-Ray terinfeksi oleh virus Covid atau dalam keadaan normal. Website ini berguna sebagai pendukung keputusan dokter dalam mendiagnosis kondisi paru-paru pasien, apakah kondisi paru-paru pasien dalam keadaan normal atau terinfeksi Covid. Sasaran pengguna dari website ini merupakan para tenaga medis yang sedang berjuang untuk mengatasi maraknya virus Covid di Indonesia, harapannya dengan adanya website ini dapat mempermudah tenaga medis untuk melakukan diagnosa dan dapat membantu memutus rantai penyebaran Covid lebih cepat.
+Web ChestCov19 merupakan aplikasi berbasis Website yang digunakan untuk mendeteksi kondisi Chest X-Ray terinfeksi oleh virus Covid atau dalam keadaan normal. Website ini berguna sebagai pendukung keputusan dokter dalam mendiagnosis kondisi paru-paru pasien, apakah kondisi paru-paru pasien dalam keadaan normal atau terinfeksi Covid. Sasaran pengguna dari website ini merupakan para tenaga medis yang sedang berjuang untuk mengatasi maraknya virus Covid di Indonesia, harapannya dengan adanya website ini dapat mempermudah tenaga medis untuk melakukan diagnosa dan dapat membantu memutus rantai penyebaran Covid lebih cepat.
 
 Model machine learning yang kami bangun menggunakan algoritma deep learning yaitu Convolutional Neural Network (CNN) yang mendukung data image, CNN mampu memberikan hasil klasifikasi yang baik dengan nilai validation accuracy sebesar **0.9273** dengan nilai loss sebesar **0.1728**. Model tersebut kami deploy ke dalam Framework Flask dengan output website.
 
@@ -41,7 +41,7 @@ Model machine learning yang kami bangun menggunakan algoritma deep learning yait
 https://www.kaggle.com/tawsifurrahman/covid19-radiography-database <br/>
 https://www.kaggle.com/praveengovi/coronahack-chest-xraydataset
 * Link Deploy Website : https://chestcov.pw
-* Link Video Presentasi : https://www.youtube.com/watch?v=js8rnvAtTmI
+* Link Video Presentasi : https://www.youtube.com/watch?v=nqZkhyGVucI
 * Link Video Demo Website :
 
 
